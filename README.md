@@ -29,7 +29,7 @@ qiankun 微前端框架模板
 - 主项目的作用只是加载子应用
 
 ## 截图
-  ![子应用]](/screenshot.jpg)
+  ![子应用]](https://github.com/PHenryy/qiankun-template/blob/main/screenshot.jpg)
 
 
 ### 新增子项目(vue 项目为例)
