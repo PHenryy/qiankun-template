@@ -1,0 +1,145 @@
+D:\Document\Github\qiankun-template
+├─.gitignore
+├─nginx.conf
+├─package.json
+├─README.md
+├─sub-apps
+|    ├─test
+|    |  ├─.browserslistrc
+|    |  ├─.eslintrc.js
+|    |  ├─babel.config.js
+|    |  ├─package-lock.json
+|    |  ├─package.json
+|    |  ├─README.md
+|    |  ├─vue.config.js
+|    |  ├─src
+|    |  |  ├─.prettierrc
+|    |  |  ├─App.vue
+|    |  |  ├─main.js
+|    |  |  ├─public-path.js
+|    |  |  ├─views
+|    |  |  |   ├─About.vue
+|    |  |  |   └Home.vue
+|    |  |  ├─store
+|    |  |  |   └index.js
+|    |  |  ├─router
+|    |  |  |   └index.js
+|    |  |  ├─components
+|    |  |  |     └HelloWorld.vue
+|    |  |  ├─assets
+|    |  |  |   └logo.png
+|    |  ├─public
+|    |  |   ├─favicon.ico
+|    |  |   └index.html
+├─main-app
+|    ├─.babelrc
+|    ├─.eslintrc
+|    ├─.prettierrc
+|    ├─index.html
+|    ├─package-lock.json
+|    ├─package.json
+|    ├─webpack.config.js
+|    ├─src
+|    |  └index.js
+|    ├─public
+|    |   └apps.json
+├─lib
+|  ├─common-components
+|  |         ├─.browserslistrc
+|  |         ├─.eslintrc.js
+|  |         ├─babel.config.js
+|  |         ├─package-lock.json
+|  |         ├─package.json
+|  |         ├─README.md
+|  |         ├─vue.config.js
+|  |         ├─src
+|  |         |  ├─main.js
+|  |         |  ├─styles
+|  |         |  |   ├─main.styl
+|  |         |  |   ├─tools
+|  |         |  |   |   ├─flex.styl
+|  |         |  |   |   ├─hairline.styl
+|  |         |  |   |   └index.styl
+|  |         |  |   ├─settings
+|  |         |  |   |    ├─color.styl
+|  |         |  |   |    └index.styl
+|  |         |  |   ├─elements
+|  |         |  |   |    └index.styl
+|  |         |  ├─components
+|  |         |  |     ├─index.js
+|  |         |  |     ├─VButton
+|  |         |  |     |    ├─index.js
+|  |         |  |     |    ├─VButton.js
+|  |         |  |     |    ├─VButton.stories.js
+|  |         |  |     |    └VButton.styl
+|  |         ├─dev
+|  |         |  ├─serve.js
+|  |         |  └serve.vue
+|  |         ├─config
+|  |         |   ├─storybook
+|  |         |   |     ├─main.js
+|  |         |   |     └preview.js
+├─dist
+|  ├─index.html
+|  ├─main-app.js
+|  ├─sub-apps
+|  |    ├─test
+|  |    |  ├─favicon.ico
+|  |    |  ├─index.html
+|  |    |  ├─js
+|  |    |  | ├─about.863460c8.js
+|  |    |  | ├─app.da1d989a.js
+|  |    |  | └chunk-vendors.01d3f5bd.js
+|  |    |  ├─img
+|  |    |  |  └logo.82b9c7a5.png
+|  |    |  ├─css
+|  |    |  |  └app.ed9a62ad.css
+|  ├─public
+|  |   └apps.json
+|  ├─lib
+|  |  ├─common-components
+|  |  |         ├─common-components.common.js
+|  |  |         ├─common-components.css
+|  |  |         ├─common-components.umd.js
+|  |  |         ├─common-components.umd.min.js
+|  |  |         └demo.html
+├─.git
+|  ├─config
+|  ├─description
+|  ├─HEAD
+|  ├─index
+|  ├─packed-refs
+|  ├─refs
+|  |  ├─tags
+|  |  ├─remotes
+|  |  |    ├─origin
+|  |  |    |   └HEAD
+|  |  ├─heads
+|  |  |   └main
+|  ├─objects
+|  |    ├─pack
+|  |    |  ├─pack-43e5573389fac9089c1efa170a3781e4e31f8f02.idx
+|  |    |  └pack-43e5573389fac9089c1efa170a3781e4e31f8f02.pack
+|  |    ├─info
+|  ├─logs
+|  |  ├─HEAD
+|  |  ├─refs
+|  |  |  ├─remotes
+|  |  |  |    ├─origin
+|  |  |  |    |   └HEAD
+|  |  |  ├─heads
+|  |  |  |   └main
+|  ├─info
+|  |  └exclude
+|  ├─hooks
+|  |   ├─applypatch-msg.sample
+|  |   ├─commit-msg.sample
+|  |   ├─fsmonitor-watchman.sample
+|  |   ├─post-update.sample
+|  |   ├─pre-applypatch.sample
+|  |   ├─pre-commit.sample
+|  |   ├─pre-push.sample
+|  |   ├─pre-rebase.sample
+|  |   ├─pre-receive.sample
+|  |   ├─prepare-commit-msg.sample
+|  |   └update.sample

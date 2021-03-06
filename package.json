@@ -1,0 +1,20 @@
+{
+  "name": "qiankun-template",
+  "version": "1.0.0",
+  "description": "乾坤(qiankun)微前端模板",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PHenryy/qiankun-template.git"
+  },
+  "author": "lzy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PHenryy/qiankun-template/issues"
+  },
+  "homepage": "https://github.com/PHenryy/qiankun-template#readme"
+}
