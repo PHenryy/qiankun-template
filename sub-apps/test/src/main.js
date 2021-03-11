@@ -5,12 +5,12 @@ import routes from "./router";
 import VueRouter from "vue-router";
 import store from "./store";
 // 公共组件
-// import commonComponents from "common-components";
+import commonComponents from "common-components";
 
 Vue.config.productionTip = false;
 
 Vue.use(VueRouter);
-// Vue.use(commonComponents);
+Vue.use(commonComponents);
 
 let router = null;
 let instance = null;

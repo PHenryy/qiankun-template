@@ -1,18 +1,19 @@
 import { registerMicroApps, start } from "qiankun";
 import "normalize.css";
-import axios from "axios";
 
 function genActiveRule(routerPrefix) {
   return (location) => location.pathname.startsWith(routerPrefix);
 }
 
-axios.get("/public/apps.json").then((res) => {
-  const apps = loadConfig(res.data);
+fetch("/public/apps.json")
+  .then((response) => response.json())
+  .then((res) => {
+    const apps = loadConfig(res);
 
-  // 动态插入子项目包裹标签
-  insertWrapper(apps);
-  bootstrap(apps);
-});
+    // 动态插入子项目包裹标签
+    insertWrapper(apps);
+    bootstrap(apps);
+  });
 
 const isProd = process.env.NODE_ENV === "production";
 
@@ -50,27 +51,10 @@ function insertWrapper(apps) {
 
 function bootstrap(apps) {
   // 注册子应用
-  registerMicroApps(apps, {
-    // 挂载前回调
-    beforeLoad: [
-      (app) => {
-        console.log("before load", app);
-      },
-    ],
-    // 挂载后回调
-    beforeMount: [
-      (app) => {
-        console.log("before mount", app);
-      },
-    ],
-    // 卸载后回调
-    afterUnmount: [
-      (app) => {
-        console.log("after unload", app);
-      },
-    ],
-  });
+  registerMicroApps(apps, {});
 
   // 启动
-  start();
+  start({
+    prefetch: true,
+  });
 }

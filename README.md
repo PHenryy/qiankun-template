@@ -5,6 +5,7 @@ qiankun 微前端框架模板
 ----------------------------------------------------------------
 
 ## 目录结构
+
 ```
 ├─nginx.conf 部署时 nginx 配置
 ├─sub-apps 子应用
@@ -14,17 +15,18 @@ qiankun 微前端框架模板
 |  ├─common-components
 ├─dist 产出包目录
 |  ├─index.html
-|  ├─main-app.js
-|  ├─sub-apps
-|  |    ├─test
+|  ├─js
+|  ├─css
 |  ├─public
 |  |   └apps.json
+|  ├─sub-apps
+|  |    ├─test
 |  ├─lib
 |  |  ├─common-components
 ```
 
 ## 说明
-- 各个应用修改了产出包地址，最终集中到 `dist` 下
+
 - 生产部署在同一端口下，避免端口的滥用
 - 主项目的作用只是加载子应用
 
@@ -38,7 +40,8 @@ qiankun 微前端框架模板
    
 2. 改造 `vue.config.js`
 
-  - 第三方库（公共文件）改为 `externals`, 并在 html 中以 `<script>/<link>` 的形式引入
+  - 第三方库（公共文件）改为 `externals`, 并在 `public/html` 或主应用的模板中以 `<script> or <link>` 的形式引入
+  
     ```javascript
       chainWebpack: (config) => {
         config.externals({
@@ -46,7 +49,9 @@ qiankun 微前端框架模板
         })
       }
     ```
+
   - 输出文件改为 `umd` 模式
+
     ```javascript
       const { name } = require('./package')
 
@@ -58,11 +63,15 @@ qiankun 微前端框架模板
         },
       }
     ```
+    
   - 修改 `publicPath` 为实际二级目录
+
     ```javascript
-      publicPath: process.env.NODE_ENV === 'production' ? '/sub-apps/ test/' : '/',
+      publicPath: process.env.NODE_ENV === 'production' ? '/sub-apps/test/' : '/',
     ```
+
 3. 新增 `public-path.js` 并在 `main.js` 顶部引入
+
   ```javascript
     if (window.__POWERED_BY_QIANKUN__) {
       // eslint-disable-next-line
@@ -70,7 +79,8 @@ qiankun 微前端框架模板
     }
 
   ```
-4. 改造 `main.js` 中应用启动方式
+
+4. 改造 `main.js` 中应用启动方式并到处生命周期钩子
 
   ```javascript
 
@@ -123,11 +133,10 @@ qiankun 微前端框架模板
       activeRule: genActiveRule("/test"),
     },
   ```
-  注意：在 html 中添加对应的包裹元素
 
 6. 配置 nginx
-   
-   ```nginx
+
+  ```nginx
     location /sub-apps/test {
       root /path/to/qiankun-template/dist;
       index index.html index.htm;
@@ -137,20 +146,27 @@ qiankun 微前端框架模板
 
 7. 打包，并将产出包上传至 `sub-apps` 目录下
 
-## Questions and Answers
+## 开发
 
-### 测试环境
-
-Q: 测试环境子应用接口404
-<br>
-A: axios 设置 baseURL 为当前 host
+1. 独立运行
 
 
-### 公有
+2. 开启主应用，库文件，及子应用
+
+## QAs
+
+
+Q : 测试环境子应用接口404
+
+
+A : axios 设置 baseURL 为当前 host
+
   
-Q: 子应用之间如何跳转？
-<br>
-A: 使用 `history.push` (history 模式)
+Q : 子应用之间如何跳转？
+
+
+A : 使用 `history.pushState` ( history 模式 )
+
   ```js
   window.history.pushState(null, '', '/sub-app/sub-app-path')
   ```

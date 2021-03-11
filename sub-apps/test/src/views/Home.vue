@@ -1,6 +1,5 @@
 <template>
   <div class="home">
-    <!-- <VButton>VButton from common components</VButton> -->
     <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>

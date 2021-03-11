@@ -14,13 +14,13 @@ module.exports = {
     },
   },
   devServer: {
-    port: '8082',
+    port: '8081',
     open: false,
     headers: {
       'Access-Control-Allow-Origin': '*',
     },
   },
   productionSourceMap: false,
-  outputDir: `../../dist/sub-apps/${name}`,
+  outputDir: `dist/${name}`,
   publicPath: process.env.NODE_ENV === 'production' ? '/sub-apps/test/' : '/',
 }

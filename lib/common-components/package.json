@@ -1,32 +1,41 @@
 {
   "name": "common-components",
-  "version": "0.1.0",
-  "private": true,
-  "sideEffects": true,
-  "main": "./dist/common-components.common.js",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "serve": "vue-cli-service serve dev/serve.js",
-    "build": "vue-cli-service build --target lib --name common-components src/main.js",
-    "storybook:build": "vue-cli-service storybook:build -c config/storybook",
-    "storybook:serve": "vue-cli-service storybook:serve -p 6006 -c config/storybook"
+    "build": "rollup -c rollup.config.prod.js",
+    "dev": "rollup -c rollup.config.dev.js -w",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "browserslist": "> 0.25%, not dead",
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@storybook/addon-actions": "^6.1.21",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addon-links": "^6.1.21",
+    "@storybook/vue": "^6.1.21",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.1.1",
+    "rollup": "^2.41.0",
+    "rollup-plugin-css-porter": "^1.0.2",
+    "rollup-plugin-serve": "^1.1.0",
+    "rollup-plugin-stylus-compiler": "^1.0.1",
+    "rollup-plugin-vue": "^5.1.9",
+    "style-loader": "^2.0.0",
+    "stylus": "^0.54.8",
+    "stylus-loader": "^4.3.3",
+    "vue": "^2.6.12",
+    "vue-loader": "^15.9.6",
+    "vue-template-compiler": "^2.6.12"
   },
   "dependencies": {
-    "core-js": "^3.6.5",
-    "vue": "^2.6.11"
-  },
-  "devDependencies": {
-    "@storybook/addon-essentials": "6.1.18",
-    "@storybook/addon-links": "6.1.18",
-    "@storybook/vue": "6.1.18",
-    "@vue/cli-plugin-babel": "~4.5.0",
-    "@vue/cli-plugin-eslint": "~4.5.0",
-    "@vue/cli-service": "~4.5.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^6.2.2",
-    "stylus": "^0.54.7",
-    "stylus-loader": "^3.0.2",
-    "vue-cli-plugin-storybook": "^2.0.0",
-    "vue-template-compiler": "^2.6.11"
+    "core-js": "^3.9.1"
   }
 }
