@@ -7,28 +7,25 @@ qiankun 微前端框架模板
 ## 目录结构
 
 ```
-├─nginx.conf 部署时 nginx 配置
-├─sub-apps 子应用
+├─nginx.conf ------------------------------部署时 nginx 配置
+├─sub-apps --------------------------------子应用
 |    ├─test
-├─main-app 主应用
-├─lib 公共组件或库
+├─main-app --------------------------------主应用
+|  ├─public
+|  |   └apps.json -------------------------项目配置文件
+├─lib -------------------------------------公共组件和库
 |  ├─common-components
-├─dist 产出包目录
+├─dist ------------------------------------产出包目录
 |  ├─index.html
 |  ├─js
-|  ├─css
 |  ├─public
 |  |   └apps.json
+|  ├─css
 |  ├─sub-apps
 |  |    ├─test
 |  ├─lib
 |  |  ├─common-components
 ```
-
-## 说明
-
-- 生产部署在同一端口下，避免端口的滥用
-- 主项目的作用只是加载子应用
 
 ## 截图
 ![image](https://github.com/PHenryy/qiankun-template/blob/main/screenshot.jpg)
@@ -80,7 +77,7 @@ qiankun 微前端框架模板
 
   ```
 
-4. 改造 `main.js` 中应用启动方式并到处生命周期钩子
+4. 改造 `main.js` 中应用启动方式并导出生命周期钩子
 
   ```javascript
 
@@ -153,7 +150,7 @@ qiankun 微前端框架模板
 
 2. 开启主应用，库文件，及子应用
 
-## QAs
+## FAQs
 
 
 Q : 测试环境子应用接口404
@@ -170,3 +167,8 @@ A : 使用 `history.pushState` ( history 模式 )
   ```js
   window.history.pushState(null, '', '/sub-app/sub-app-path')
   ```
+
+Q : 样式隔离
+
+
+A : 使用 `{ strictStyleIsolation: true }`
