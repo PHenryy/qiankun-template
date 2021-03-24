@@ -172,3 +172,30 @@ Q : 样式隔离
 
 
 A : 使用 `{ strictStyleIsolation: true }`
+
+
+Q : 开发环境子应用请求跨域
+
+
+A : 修改 proxy 配置
+
+```js
+devServer: {
+  headers: {
+    "Access-Control-Allow-Origin": "*",
+    "Access-Control-Allow-Methods": "*",
+    "Access-Control-Allow-Headers": "*"
+  },
+  proxy: {
+    'xxx': {
+      target: 'xxx',
+      bypass: function (req, res, proxyOptions) {
+        if (req.method === 'OPTIONS') {
+          res.statusCode = 204
+          return 'a'  // <----  这个a我也不知道干嘛的
+        }
+      },
+    }
+  },
+},
+```
